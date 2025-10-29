@@ -1,0 +1,27 @@
+[project]
+name = "sqlalchemy-d1"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Chad Rossouw",email = "chadrossouw7247@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "sqlalchemy (>=2.0.44,<3.0.0)",
+    "dbapi-d1 @ file:///Users/rossoc1/Desktop/University/2025F/CSCD01/cloudflare-d1/dbapi-d1"
+]
+
+[tool.poetry]
+packages = [{include = "sqlalchemy_d1", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=8.4.2,<9.0.0)",
+    "black (>=25.9.0,<26.0.0)",
+    "mypy (>=1.18.2,<2.0.0)"
+]
