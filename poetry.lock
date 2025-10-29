@@ -217,7 +217,7 @@ optional = false
 python-versions = ">=3.11,<3.12"
 groups = ["main"]
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 requests = ">=2.32.5,<3.0.0"
@@ -654,4 +654,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.12"
-content-hash = "e0702fba235b8fbba197f51119a042c020ed4df3986886b2c98c3a9200be7888"
+content-hash = "93825bd59264806f86fc9915ad79437b77d9f721c8b5dd1827e627f529852cfd"
