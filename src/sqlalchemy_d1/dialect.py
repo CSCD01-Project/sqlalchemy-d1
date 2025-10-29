@@ -8,8 +8,10 @@ from sqlalchemy.engine import reflection
 class D1Dialect(DefaultDialect):
     name = "d1"
     driver = "dbapi-d1"
-    supports_transactions = False
-    supports_statement_cache = False
+    supports_alter = False
+    supports_sane_rowcount = True
+    supports_sane_multi_rowcount = True
+    supports_statement_cache = True
     paramstyle = "qmark"
 
     def create_connect_args(self, url):
@@ -37,7 +39,7 @@ class D1Dialect(DefaultDialect):
     def import_dbapi():
         return dbapi_d1
 
-    def dbapi(self):
+    def dbapi():
         return dbapi_d1
 
     @reflection.cache
