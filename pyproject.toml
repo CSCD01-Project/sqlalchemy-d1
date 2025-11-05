@@ -1,6 +1,6 @@
 [project]
 name = "sqlalchemy-d1"
-version = "0.1.2"
+version = "0.1.0"
 description = ""
 authors = [
     {name = "Chad Rossouw",email = "chadrossouw7247@gmail.com"}
