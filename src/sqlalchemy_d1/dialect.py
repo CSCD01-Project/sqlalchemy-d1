@@ -28,6 +28,17 @@ class D1Dialect(DefaultDialect):
             },
         )
 
+    def do_ping(self, dbapi_connection) -> bool:
+        """
+        Return if the database can be reached.
+        """
+        try:
+            dbapi_connection.execute(text("SELECT 1"))
+        except Exception as ex:
+            return False
+
+        return True
+
     def do_execute(self, cursor, statement, parameters, context=None):
         cursor.execute(statement, parameters)
 
@@ -248,6 +259,22 @@ class D1Dialect(DefaultDialect):
             raise RuntimeError(
                 f"Failed to check existence of table '{table_name}': {e}"
             )
+
+    def get_check_constraints(
+        self, connection, table_name, schema=None, **kwargs
+    ):
+        return []
+
+    def get_table_comment(self, connection, table_name, schema=None, **kwargs):
+        return {"text": ""}
+
+    def get_view_definition(
+        self, connection, view_name, schema=None, **kwargs
+    ):
+        pass
+
+    def do_rollback(self, dbapi_connection):
+        pass
 
     def _resolve_type(self, d1_type: str):
         """
