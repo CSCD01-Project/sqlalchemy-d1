@@ -11,6 +11,7 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
+dynamic = ["dependencies"]
 
 [tool.poetry]
 packages = [{include = "sqlalchemy_d1", from = "src"}]
@@ -18,22 +19,16 @@ packages = [{include = "sqlalchemy_d1", from = "src"}]
 [tool.poetry.dependencies]
 python = ">=3.11,<3.12"
 sqlalchemy = ">=1.4,<2"
-dbapi-d1 = ">=0.1.0" 
+dbapi-d1 = ">=0.1.0"  # published version
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.4.2,<9.0.0"
+black = ">=25.9.0,<26.0.0"
+mypy = ">=1.18.2,<2.0.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[dependency-groups]
-dev = [
-    "pytest (>=8.4.2,<9.0.0)",
-    "black (>=25.9.0,<26.0.0)",
-    "mypy (>=1.18.2,<2.0.0)"
-]
-
-local = [
-    { name = "dbapi-d1", path = "../dbapi-d1", develop = true }
-]
 
 [project.entry-points."sqlalchemy.dialects"]
 d1 = "sqlalchemy_d1.dialect:D1Dialect"

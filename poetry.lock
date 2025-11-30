@@ -214,17 +214,15 @@ name = "dbapi-d1"
 version = "0.1.0"
 description = ""
 optional = false
-python-versions = ">=3.11,<3.12"
+python-versions = "<3.12,>=3.11"
 groups = ["main"]
-files = []
-develop = true
+files = [
+    {file = "dbapi_d1-0.1.0-py3-none-any.whl", hash = "sha256:625093e0877bae62a14646fcb5a1a73e6ca00659b21dce4330c95a2ff4de1470"},
+    {file = "dbapi_d1-0.1.0.tar.gz", hash = "sha256:864837e89f30bd53874090996e761ae359258f182dc21c6d88b21be943f96787"},
+]
 
 [package.dependencies]
 requests = ">=2.32.5,<3.0.0"
-
-[package.source]
-type = "directory"
-url = "../dbapi-d1"
 
 [[package]]
 name = "greenlet"
@@ -636,4 +634,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<3.12"
-content-hash = "fd5092c270ac1b40a9110c4731d77503d6a97544ef57240e9ac61ccc0f7d8a22"
+content-hash = "7f40baf0a84ed38729dc13662d2a78feb1151e610b113a49000d70248c3d350c"
